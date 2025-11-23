@@ -1,0 +1,371 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    line-height: 1.6; 
+    background-color: #ffffff; 
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: #2c3e50;
+    font-weight: 700; 
+}
+
+.subtitle {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 2em;
+    font-size: 1.1em;
+}
+
+/* --- Yuqori Menyu (Navbar) --- */
+.navbar {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%; /* Tuzatildi: 90% emas, 100% */
+    top: 0;
+    left: 0; 
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 5px 0; 
+}
+
+.navbar nav a:hover {
+    color: #3498db; 
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* --- Bosh Sahifa (Hero Section) --- */
+.hero-section {
+    /* Fon rasmi uchun zaxira rang qo'shildi */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('017.jpg'), #333; 
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* min-height ishlatildi */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding-top: 80px; 
+    padding-bottom: 20px;
+}
+
+.main-title {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+
+.btn-main {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 30px;
+    border-radius: 4px;
+}
+
+.btn-main:hover {
+    background-color: white;
+    color: #2c3e50;
+}
+
+/* --- Statistikalar --- */
+.statistics-section {
+    padding: 80px 5%;
+    background-color: #f4f4f4;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.stat-card {
+    background-color: rgb(248, 248, 248);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    flex: 1;
+    text-align: center;
+    min-height: 150px;
+    transition: transform 0.3s;
+}
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card h3 {
+    color: #3498db;
+    margin-top: 0;
+    font-size: 1.3em;
+}
+
+/* ======================================= */
+/* --- 3. Maktab Binolari va Hover Effekti --- */
+/* ======================================= */
+
+.building-section {
+    padding: 80px 5%;
+    background-color: #ffffff;
+}
+
+.building-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* O'ram (Container) */
+.building-item {
+    position: relative;
+    flex: 1;
+    max-width: 30%;
+    border-radius: 5px;
+    overflow: hidden; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.building-item:hover {
+    transform: scale(1.05);
+}
+
+.building-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: filter 0.3s;
+}
+
+/* Overlay (Yashil qoplama) uslubi */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Boshida to'liq shaffof */
+    background-color: rgba(0, 128, 0, 0); 
+    transition: background-color 0.4s ease; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Boshida to'liq yashirin */
+}
+
+/* Matn uslubi */
+.overlay-text {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    transform: translateY(20px); /* Boshida pastda */
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}/* Mishka olib borilganda (HOVER) uslubi */
+.building-item:hover .overlay {
+    background-color: rgba(0, 128, 0, 0.7); /* Yashil soya */
+    opacity: 1; 
+}
+
+.building-item:hover .overlay-text {
+    transform: translateY(0); /* Matn markazga ko'tarilishi */
+}
+
+
+/* --- Yutuqlar --- */
+.achievements-section {
+    padding: 80px 5%;
+    background-color: #ecf0f1;
+}
+
+.achievement-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.achievement-item {
+    background-color: #fff;
+    padding: 20px; 
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); 
+    display: flex;
+    align-items: flex-start;
+    border-left: 5px solid #3498db;
+}
+
+.icon-circle {
+    width: 10px; 
+    height: 10px;
+    background-color: #3498db;
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+
+/* --- Murojaat qismi --- */
+.contact-us-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('hosil.jpg'), #555; 
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-text {
+    color: white;
+    font-size: 1.8em;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.btn-contact {
+    background-color: white;
+    color: #333;
+    border: none;
+    padding: 12px 35px; 
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-contact:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+/* --- Ijtimoiy Tarmoqlar va Footer --- */
+.footer-section {
+    text-align: center;
+    padding: 50px 5%;
+    background-color: #f8f8f8; 
+}
+
+.social-links {
+    margin: 25px 0;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2em;
+    margin: 0 8px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px) scale(1.1);
+}
+
+.social-icon:nth-child(1) { background-color: #3b5998; }
+.social-icon:nth-child(2) { background-color: #00acee; }
+.social-icon:nth-child(3) { background-color: #C13584; }
+.social-icon:nth-child(4) { background-color: #0088cc; }
+
+.made-with {
+    margin-top: 30px;
+    color: #95a5a6;
+}
+
+/* --- Mobil qurilmalar uchun moslashuv (Responsive) --- */
+@media (max-width: 768px) {
+    .navbar nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #2c3e50;
+        text-align: center;
+        transition: max-height 0.3s ease-in-out;
+        max-height: 0; 
+        overflow: hidden; 
+    }
+    
+    .navbar nav.active {
+        display: flex;
+        max-height: 300px; 
+    }
+
+    .navbar nav a {
+        margin: 0;
+        padding: 10px 0;
+        border-top: 1px solid #34495e;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .stats-grid, .building-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .building-item {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    
+    .building-item img {
+        width: 100%;
+    }
+
+    .main-title {
+        font-size: 2.5em; 
+    }
+}
